@@ -2,18 +2,22 @@
 package main
 
 import (
-	"average/readfile"
+	"average/datafile"
 	"fmt"
+	"log"
 )
 
 func main() {
 	var sum float64
-	numbers := [3]float64{10.5, 20.3, 30.2}
+	numbers, err := datafile.GetFloats("data/data.txt")
+
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	for _, num := range numbers {
 		sum += num
 	}
 
 	fmt.Printf("Average: %.2f\n", sum/float64(len(numbers)))
-	readfile.Read()
 }
