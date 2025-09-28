@@ -1,7 +1,10 @@
 // Calculate the average of a list of numbers read from a file.
 package main
 
-import "fmt"
+import (
+	"average/readfile"
+	"fmt"
+)
 
 func main() {
 	var sum float64
@@ -12,4 +15,5 @@ func main() {
 	}
 
 	fmt.Printf("Average: %.2f\n", sum/float64(len(numbers)))
+	readfile.Read()
 }
