@@ -20,4 +20,12 @@ func main() {
 	}
 
 	fmt.Printf("Average: %.2f\n", sum/float64(len(numbers)))
+
+	votes, err := datafile.GetStrings("data/votes.txt")
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(votes)
 }
